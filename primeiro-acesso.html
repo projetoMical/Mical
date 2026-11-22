@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Primeiro acesso e cadastro demonstrativo de aparelho no MICAL.">
+  <title>Primeiro acesso | MICAL</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<header class="header"><div class="container nav">
+  <a class="brand" href="index.html"><img src="img/Logo.png" alt="" class="logo"><span>MICAL</span></a>
+  <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+  <nav class="nav-links"><a href="index.html"><i data-lucide="house"></i> Início</a><a href="monitoramento.html"><i data-lucide="activity"></i> Monitoramento</a><a href="calculo-conta.html"><i data-lucide="calculator"></i> Calcular conta</a><a href="dicas-economia.html"><i data-lucide="lightbulb"></i> Dicas de economia</a></nav>
+  <div class="header-actions"><div class="auth-area" id="authArea"></div><button class="theme-toggle" data-theme-toggle aria-label="Alternar tema"><i data-lucide="moon"></i></button></div>
+</div></header>
+<main class="form-page">
+  <div class="container wizard" id="firstAccess">
+    <div id="progressArea" class="progress" aria-label="Progresso do cadastro">
+      <div class="progress-step active" data-progress="1"><span class="number">1</span><span>Cadastro do aparelho</span></div>
+      <div class="progress-step" data-progress="2"><span class="number">2</span><span>Questionário</span></div>
+      <div class="progress-step" data-progress="3"><span class="number">3</span><span>Confirmação</span></div>
+    </div>
+    <div id="wizardNotice" class="notice" role="alert"></div>
+    <section class="wizard-panel" data-step-panel="1">
+      <span class="eyebrow">Primeiro acesso</span><h1>Configure seu monitoramento</h1>
+      <p>Escolha qual tipo de consumo deseja acompanhar e informe o código de identificação do aparelho.</p>
+      <h2 style="font-size:1.1rem;margin-bottom:8px">1. Escolha uma opção</h2>
+      <div class="choice-grid">
+        <label class="choice-card"><input type="radio" name="tipo" value="agua"><div class="choice-icon"><i data-lucide="droplet" aria-hidden="true"></i></div><h2>Monitoramento de água</h2><p><strong>Sensor YF-S201</strong></p><p>Sensor de fluxo utilizado para acompanhar a passagem e o volume de água.</p></label>
+        <label class="choice-card"><input type="radio" name="tipo" value="energia"><div class="choice-icon"><i data-lucide="zap" aria-hidden="true"></i></div><h2>Monitoramento de energia</h2><p><strong>Sensor SCT-013</strong></p><p>Sensor de corrente utilizado para obter informações relacionadas ao consumo elétrico.</p></label>
+        <label class="choice-card"><input type="radio" name="tipo" value="ambos"><div class="choice-icon"><i data-lucide="house" aria-hidden="true"></i></div><h2>Monitoramento completo</h2><p><strong>YF-S201 + SCT-013</strong></p><p>Permite acompanhar água e energia simultaneamente.</p></label>
+      </div>
+      <div class="field"><label for="deviceCode">Código de identificação do aparelho</label><input id="deviceCode" name="codigo" placeholder="Ex.: MICAL-ESP32-001" autocomplete="off"><small>O código será vinculado à sua conta no banco de dados MICAL.</small></div>
+      <div class="form-actions"><button class="btn btn-primary" type="button" id="continueDevice" disabled>Continuar <i data-lucide="arrow-right"></i></button><a class="btn btn-secondary" href="index.html">Cancelar</a></div>
+    </section>
+    <section class="wizard-panel hidden" data-step-panel="2">
+      <span class="eyebrow">Etapa 2 de 3</span><h1>Questionário de consumo</h1><p>Conte um pouco sobre a residência e informe os dados da conta anterior.</p>
+      <div class="form-grid">
+        <div class="field full"><label for="residents">Quantas pessoas moram na residência?</label><input id="residents" name="moradores" type="number" min="1" step="1" placeholder="Ex.: 4 pessoas"></div>
+        <div class="field full"><label id="usageQuestion" for="usageInput">Faixa de horário de utilização</label><input id="usageInput" name="horario" placeholder="Ex.: Das 7h às 22h"></div>
+        <div id="waterFields" class="field full hidden" style="display:contents">
+          <div class="field"><label for="waterBill">Valor da conta anterior de água (R$)</label><input id="waterBill" name="valorAgua" type="number" min="0" step="0.01" placeholder="Ex.: 85,00"></div>
+          <div class="field"><label for="waterUse">Consumo registrado de água (m³)</label><input id="waterUse" name="consumoAgua" type="number" min="0" step="0.01" placeholder="Ex.: 12"></div>
+          <div class="field full"><label for="waterReference">Mês e ano de referência da conta de água</label><input id="waterReference" name="referenciaAgua" type="month"></div>
+        </div>
+        <div id="energyFields" class="field full hidden" style="display:contents">
+          <div class="field"><label for="energyBill">Valor da conta anterior de energia (R$)</label><input id="energyBill" name="valorEnergia" type="number" min="0" step="0.01" placeholder="Ex.: 150,00"></div>
+          <div class="field"><label for="energyUse">Consumo registrado de energia (kWh)</label><input id="energyUse" name="consumoEnergia" type="number" min="0" step="0.01" placeholder="Ex.: 180"></div>
+          <div class="field full"><label for="energyReference">Mês e ano de referência da conta de energia</label><input id="energyReference" name="referenciaEnergia" type="month"></div>
+        </div>
+      </div>
+      <div class="form-actions"><button class="btn btn-secondary" type="button" id="backToDevice">Voltar</button><button class="btn btn-yellow" type="button" id="continueQuestionnaire">Continuar <i data-lucide="arrow-right"></i></button></div>
+    </section>
+    <section class="wizard-panel hidden" data-step-panel="3">
+      <span class="eyebrow">Etapa 3 de 3</span><h1>Confira suas informações</h1><p>Revise os dados antes de salvar as informações no banco de dados.</p>
+      <div class="summary-grid" id="summaryContent"></div>
+      <div class="disclaimer">As informações do aparelho e das contas serão salvas na sua conta MICAL. O ESP32 ainda não está conectado e não há recebimento de medições.</div>
+      <div class="form-actions"><button class="btn btn-secondary" type="button" id="backToQuestionnaire">Voltar e editar</button><button class="btn btn-primary" type="button" id="confirmDevice">Confirmar cadastro</button></div>
+    </section>
+    <section class="wizard-panel hidden" id="successPanel">
+      <div class="success-panel"><div class="success-mark"><i data-lucide="check"></i></div><span class="eyebrow">Cadastro concluído</span><h1>Cadastro realizado com sucesso<span id="successName"></span>!</h1><p>As informações do seu aparelho e das contas anteriores foram salvas no banco de dados.</p><div class="disclaimer">Próximo passo: realizar a integração do dispositivo. O ESP32 ainda não está conectado e o MICAL não está recebendo medições.</div><div class="form-actions" style="justify-content:center"><button class="btn btn-yellow" type="button" id="goToMonitoring">Ir para apresentação do monitoramento</button></div></div>
+    </section>
+  </div>
+</main>
+<footer class="footer"><div class="container footer-grid">
+  <div><h3>MICAL</h3><p>Monitoramento Inteligente de Consumo de Água e Luz.</p></div>
+  <div><h3>Navegação</h3><a href="index.html">Início</a><a href="monitoramento.html">Monitoramento</a><a href="calculo-conta.html">Calcular conta</a><a href="dicas-economia.html">Dicas de economia</a></div>
+  <div><h3>Projeto</h3><p>Trabalho de Conclusão de Curso — Etec Doutor Celso Giglio.</p></div>
+  <div><h3>Contato</h3><p>prjmical@gmail.com</p></div>
+</div><div class="container footer-bottom">© 2026 MICAL — Projeto acadêmico.</div><div class="container footer-bottom"><a href="privacidade-termos.html">Privacidade e Termos de Uso</a></div></footer>
+<script src="script.js"></script>
+</body></html>

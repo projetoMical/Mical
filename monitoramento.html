@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sistema de monitoramento residencial de água e energia MICAL.">
+<title>Monitoramento | MICAL</title><link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<header class="header"><div class="container nav">
+<a href="index.html" class="brand"><img src="img/Logo.png" alt="" class="logo"><span>MICAL</span></a>
+<button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+<nav class="nav-links"><a href="index.html"><i data-lucide="house"></i> Início</a><a href="monitoramento.html"><i data-lucide="activity"></i> Monitoramento</a><a href="calculo-conta.html"><i data-lucide="calculator"></i> Calcular conta</a><a href="dicas-economia.html"><i data-lucide="lightbulb"></i> Dicas de economia</a></nav>
+<div class="auth-area" id="authArea"></div><button class="theme-toggle" data-theme-toggle aria-label="Alternar tema"><i data-lucide="moon"></i></button>
+</div></header>
+<main id="dashboardRoot" class="dashboard-wrap"><div class="container">
+<section id="guestDashboard" class="form-card hidden"><span class="eyebrow">Monitoramento inteligente</span><h1>Controle seu consumo de água e energia.</h1><p class="form-intro">Entre na sua conta para consultar as medições da sua residência.</p><a class="btn btn-primary" href="login.html">Entrar</a></section>
+<section id="noDeviceDashboard" class="form-card hidden"><h1>Vamos configurar seu monitoramento</h1><p class="form-intro">Sua conta ainda não possui um aparelho cadastrado.</p><a class="btn btn-primary" href="primeiro-acesso.html">Cadastrar aparelho</a></section>
+<section id="activeDashboard" class="hidden">
+
+    <div class="dashboard-heading">
+        <div>
+            <h1>Olá, <span id="welcomeName">morador</span>!</h1>
+            <p class="form-intro">
+                Acompanhe o consumo da sua residência em tempo real.
+            </p>
+        </div>
+
+        <span class="status-pill" id="deviceStatusPill">
+            Conectando...
+        </span>
+    </div>
+
+    <!-- INFORMAÇÕES DO DISPOSITIVO -->
+    <div class="dashboard-grid">
+
+        <article class="dash-card">
+            <h3>Dispositivo</h3>
+            <span class="dash-value" id="deviceId">—</span>
+            <p class="dash-sub" id="deviceType"></p>
+            <p id="deviceStatus">Aguardando leitura...</p>
+        </article>
+
+        <!-- CONSUMO DE ÁGUA -->
+        <article class="dash-card" id="waterCard">
+            <h3>Consumo de água</h3>
+
+            <p class="dash-sub">Vazão atual</p>
+            <div class="dash-value" id="waterFlowValue">—</div>
+
+            <p class="dash-sub">Consumo do intervalo</p>
+            <div class="dash-value" id="waterIntervalValue">—</div>
+
+            <p class="dash-sub">Volume acumulado</p>
+            <div class="dash-value" id="waterTotalValue">—</div>
+        </article>
+
+        <!-- CONSUMO DE ENERGIA -->
+        <article class="dash-card" id="energyCard">
+            <h3>Consumo de energia</h3>
+
+            <p class="dash-sub">Corrente estimada</p>
+            <div class="dash-value" id="energyCurrentValue">—</div>
+
+            <p class="dash-sub">Potência estimada</p>
+            <div class="dash-value" id="energyPowerValue">—</div>
+
+            <p class="dash-sub">Energia acumulada</p>
+            <div class="dash-value" id="energyTotalValue">—</div>
+        </article>
+
+    </div>
+
+    <p class="dash-sub" id="measurementUpdated">
+        Aguardando primeira atualização...
+    </p>
+
+    <!-- HISTÓRICO E GRÁFICOS -->
+    <div class="history-dashboard">
+
+        <div class="dashboard-heading">
+            <div>
+                <span class="eyebrow">Análise de consumo</span>
+                <h2>Histórico e comparações</h2>
+                <p class="form-intro">
+                    Compare o consumo atual com os períodos anteriores.
+                </p>
+            </div>
+        </div>
+
+        <div class="history-notice">
+            Os gráficos consideram somente medições reais recebidas do ESP32.
+            Quando não houver registros para um período, o sistema informará que não há dados suficientes.
+        </div>
+
+        <!-- GRÁFICOS DE ÁGUA -->
+        <div id="waterCharts">
+
+            <h3>Consumo de água</h3>
+
+            <div class="chart-grid">
+
+                <article class="dash-card">
+                    <h4>Comparação diária</h4>
+                    <div id="waterDailyChart" class="chart-area">
+                        Carregando dados...
+                    </div>
+                </article>
+
+                <article class="dash-card">
+                    <h4>Comparação semanal</h4>
+                    <div id="waterWeeklyChart" class="chart-area">
+                        Carregando dados...
+                    </div>
+                </article>
+
+                <article class="dash-card">
+                    <h4>Comparação mensal</h4>
+                    <div id="waterMonthlyChart" class="chart-area">
+                        Carregando dados...
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- GRÁFICOS DE ENERGIA -->
+        <div id="energyCharts">
+
+            <h3>Consumo de energia elétrica</h3>
+
+            <div class="chart-grid">
+
+                <article class="dash-card">
+                    <h4>Comparação diária</h4>
+                    <div id="energyDailyChart" class="chart-area">
+                        Carregando dados...
+                    </div>
+                </article>
+
+                <article class="dash-card">
+                    <h4>Comparação semanal</h4>
+                    <div id="energyWeeklyChart" class="chart-area">
+                        Carregando dados...
+                    </div>
+                </article>
+
+                <article class="dash-card">
+                    <h4>Comparação mensal</h4>
+                    <div id="energyMonthlyChart" class="chart-area">
+                        Carregando dados...
+                    </div>
+                </article>
+
+            </div>
+        </div>
+
+        <div class="chart-legend">
+            <span><i class="legend-real"></i> Medições reais do ESP32</span>
+        </div>
+
+    </div>
+
+<div class="disclaimer">A potência e a energia elétrica são estimativas calculadas pelo protótipo. A precisão depende da calibração dos sensores e dos parâmetros elétricos utilizados.</div>
+<div class="dashboard-actions">
+  <a class="btn btn-primary" href="calculo-conta.html">Calcular minha conta</a>
+  <a class="btn btn-yellow" href="dicas-economia.html">Dicas de economia</a>
+</div>
+</section></div></main>
+<footer class="footer"><div class="container footer-grid"><div><h3>MICAL</h3><p>Monitoramento Inteligente de Consumo de Água e Luz.</p></div><div><h3>Navegação</h3><a href="index.html">Início</a><a href="monitoramento.html">Monitoramento</a><a href="calculo-conta.html">Calcular conta</a><a href="dicas-economia.html">Dicas de economia</a></div><div><h3>Projeto</h3><p>Trabalho de Conclusão de Curso — Projeto acadêmico.</p></div><div><h3>Contato</h3><p>prjmical@gmail.com</p></div></div><div class="container footer-bottom">© 2026 MICAL — Projeto acadêmico.</div><div class="container footer-bottom"><a href="privacidade-termos.html">Privacidade e Termos de Uso</a></div></footer>
+<script src="supabase-config.js"></script><script src="script.js"></script>
+</body></html>

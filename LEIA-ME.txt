@@ -1,0 +1,15 @@
+MICAL — ARQUIVOS DO SITE
+
+Abra index.html em um servidor local ou publique a pasta em uma hospedagem estática.
+
+Páginas principais: index.html, cadastro.html, login.html, primeiro-acesso.html, monitoramento.html, configuracoes.html, historico.html e privacidade-termos.html.
+
+As alterações desta versão incluem: cadastro simplificado para maiores de 18 anos; validação de senha e confirmações; mostrar/ocultar senha; aceite registrado de privacidade e termos; menus com ícones; menu de perfil; configurações com telefone; histórico com estado vazio; e página de privacidade e termos.
+
+IMPORTANTE — LIMITAÇÕES TÉCNICAS
+Esta versão continua sendo um protótipo front-end. O cadastro e a sessão usam armazenamento local do navegador (localStorage), portanto não constituem autenticação segura nem sincronização entre dispositivos. Para publicação real, substituir a autenticação local por Firebase Authentication, armazenar os dados em Firestore com regras de segurança por UID e nunca guardar senhas em texto puro. A integração ESP32/Firebase e o recebimento de leituras reais ainda não estão implementados. Por isso, o histórico não apresenta dados fictícios.
+
+A política e os termos incluídos são um texto-base informativo e precisam ser revisados para refletir a infraestrutura real e receber validação adequada antes de uso público.
+
+
+ATUALIZAÇÃO DE INTEGRAÇÃO (cadastro/login): cadastro e login usam auth.php + sessão PHP e gravam/consultam a tabela usuarios. As senhas são armazenadas com password_hash() e verificadas com password_verify(). Configure a senha nova em conexao.php antes de publicar. O primeiro acesso/aparelhos, configurações, histórico e medições ainda precisam ser integrados ao banco nas próximas etapas.

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Estimativa das contas de água e energia com o MICAL.">
+<title>Cálculo da conta | MICAL</title><link rel="stylesheet" href="style.css"><script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<header class="header"><div class="container nav">
+<a href="index.html" class="brand"><img src="img/Logo.png" alt="" class="logo"><span>MICAL</span></a>
+<button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+<nav class="nav-links">
+  <a href="index.html"><i data-lucide="house"></i> Início</a>
+  <a href="monitoramento.html"><i data-lucide="activity"></i> Monitoramento</a>
+  <a href="calculo-conta.html" class="active"><i data-lucide="calculator"></i> Calcular conta</a>
+  <a href="dicas-economia.html"><i data-lucide="lightbulb"></i> Dicas de economia</a>
+</nav>
+<div class="auth-area" id="authArea"></div><button class="theme-toggle" data-theme-toggle aria-label="Alternar tema"><i data-lucide="moon"></i></button>
+</div></header>
+<main class="dashboard-wrap"><div class="container">
+<section class="page-intro"><span class="eyebrow">Planejamento de gastos</span><h1>Calculadora de conta</h1><p class="form-intro">Veja uma estimativa baseada nas medições do aparelho e nos valores das contas informadas no seu cadastro.</p></section>
+<section id="billGuest" class="form-card hidden"><h2>Entre na sua conta</h2><p>Faça login para consultar os dados do seu aparelho e das contas cadastradas.</p><a class="btn btn-primary" href="login.html">Entrar</a></section>
+<section id="billNoDevice" class="form-card hidden"><h2>Cadastre seu aparelho</h2><p>Não encontramos um aparelho vinculado à sua conta.</p><a class="btn btn-primary" href="primeiro-acesso.html">Cadastrar aparelho</a></section>
+<p id="billStatus" class="dash-sub" aria-live="polite">Carregando informações...</p>
+<div class="estimate-grid">
+<article id="waterEstimate" class="estimate-card hidden"><div class="estimate-icon water-icon"><i data-lucide="droplet"></i></div><h2>Estimativa da conta de água</h2><p class="dash-sub">Consumo total acumulado informado pelo sensor</p><strong id="waterEstimateConsumption" class="estimate-consumption">—</strong><p class="dash-sub">Custo médio por m³, calculado com base na conta anterior</p><strong id="waterUnitPrice">—</strong><div class="estimate-total"><span>Valor estimado</span><strong id="waterEstimateValue">—</strong></div><small id="waterBillReference"></small></article>
+<article id="energyEstimate" class="estimate-card hidden"><div class="estimate-icon energy-icon"><i data-lucide="zap"></i></div><h2>Estimativa da conta de energia</h2><p class="dash-sub">Consumo total acumulado informado pelo sensor</p><strong id="energyEstimateConsumption" class="estimate-consumption">—</strong><p class="dash-sub">Custo médio por kWh, calculado com base na conta anterior</p><strong id="energyUnitPrice">—</strong><div class="estimate-total"><span>Valor estimado</span><strong id="energyEstimateValue">—</strong></div><small id="energyBillReference"></small></article>
+</div>
+<div class="disclaimer">A estimativa é aproximada: utiliza o valor e o consumo da conta anterior cadastrada e o total acumulado informado pelo sensor. Para que o valor represente um ciclo de faturamento, o contador acumulado precisa corresponder ao mesmo período da conta. Tarifas, impostos, taxas, bandeiras e faixas de cobrança podem alterar o valor oficial. O cálculo não substitui a fatura da concessionária.</div>
+<div class="dashboard-actions"><a class="btn btn-secondary" href="monitoramento.html">Voltar ao monitoramento</a><a class="btn btn-yellow" href="dicas-economia.html">Ver dicas de economia</a></div>
+</div></main>
+<footer class="footer"><div class="container footer-grid"><div><h3>MICAL</h3><p>Monitoramento Inteligente de Consumo de Água e Luz.</p></div><div><h3>Navegação</h3><a href="index.html">Início</a><a href="monitoramento.html">Monitoramento</a><a href="calculo-conta.html">Calcular conta</a><a href="dicas-economia.html">Dicas de economia</a></div><div><h3>Projeto</h3><p>Trabalho de Conclusão de Curso — Projeto acadêmico.</p></div><div><h3>Informações</h3><a href="privacidade-termos.html">Privacidade e Termos de Uso</a></div></div><div class="container footer-bottom">© 2026 MICAL — Projeto acadêmico.</div></footer>
+<script src="supabase-config.js"></script><script src="script.js"></script>
+</body></html>

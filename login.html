@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Sistema de monitoramento residencial de água e energia MICAL."><title>Login | MICAL</title><link rel="stylesheet" href="style.css"><script src="https://unpkg.com/lucide@latest"></script></head><body>
+<header class="header"><div class="container nav"><a href="index.html" class="brand"><img src="img/Logo.png" alt="" class="logo"><span>MICAL</span></a><button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button><nav class="nav-links"><a href="index.html"><i data-lucide="house"></i> Início</a><a href="monitoramento.html"><i data-lucide="activity"></i> Monitoramento</a><a href="calculo-conta.html"><i data-lucide="calculator"></i> Calcular conta</a><a href="dicas-economia.html"><i data-lucide="lightbulb"></i> Dicas de economia</a></nav><div class="auth-area" id="authArea"></div><button class="theme-toggle" data-theme-toggle aria-label="Alternar tema"><i data-lucide="moon"></i></button></div></header>
+
+<main class="form-page"><div class="container"><section class="form-card narrow"><h1>Entrar no MICAL</h1><p class="form-intro">Acesse sua conta para acompanhar seu consumo.</p><div id="formNotice" class="notice" role="status"></div>
+<form id="loginForm"><div class="form-grid"><div class="field full"><label for="loginEmail">E-mail</label><input id="loginEmail" name="email" type="email" autocomplete="email" required></div><div class="field full"><label for="loginPassword">Senha</label><div class="password-wrap"><input id="loginPassword" name="senha" type="password" autocomplete="current-password" required><button class="password-toggle" type="button" data-password-toggle="loginPassword" aria-label="Mostrar senha"><i data-lucide="eye"></i></button></div></div></div><div class="form-actions"><button class="btn btn-primary" type="submit">Login</button><button class="btn btn-secondary" type="button" id="forgotButton">Esqueci minha senha</button></div></form><p style="margin-top:20px">Ainda não tem cadastro? <a class="muted-link" href="cadastro.html">Criar conta</a></p></section></div></main>
+
+<footer class="footer"><div class="container footer-grid">
+<div><h3>MICAL</h3><p>Monitoramento Inteligente de Consumo de Água e Luz.</p></div>
+<div><h3>Navegação</h3><a href="index.html">Início</a><a href="monitoramento.html">Monitoramento</a><a href="calculo-conta.html">Calcular conta</a><a href="dicas-economia.html">Dicas de economia</a></div>
+<div><h3>Projeto</h3><p>Trabalho de Conclusão de Curso — Etec Doutor Celso Giglio.</p></div>
+<div><h3>Contato</h3><p>prjmical@gmail.com</p></div>
+</div><div class="container footer-bottom">© 2026 MICAL — Projeto acadêmico.</div></footer>
+
+<script src="script.js"></script></body></html>

@@ -1,0 +1,35 @@
+MICAL - INTEGRAÇÃO COM SUPABASE
+
+ARQUIVOS ALTERADOS:
+- monitoramento.html
+- historico.html
+- script.js
+- style.css
+
+ARQUIVO NOVO:
+- supabase-config.js
+
+ANTES DE ENVIAR:
+1. Abra supabase-config.js.
+2. Substitua COLE_AQUI_A_PROJECT_URL pela Project URL do Supabase.
+   Exemplo de formato: https://SEU-PROJETO.supabase.co
+3. Substitua COLE_AQUI_A_PUBLISHABLE_KEY pela Publishable key (sb_publishable_...).
+4. Não use a Secret key no JavaScript.
+
+ENVIO:
+- Envie os quatro arquivos alterados e o arquivo novo para a mesma pasta do site no InfinityFree (normalmente htdocs).
+- Não apague os demais arquivos.
+- Faça backup dos arquivos antigos antes de substituir.
+- Depois, saia e entre novamente no site para renovar a sessão.
+
+IMPORTANTE SOBRE O CADASTRO:
+O script usa o aparelho_id retornado por salvar-aparelho.php e salvo no navegador.
+O ESP32 está enviando aparelho_id=1. O cadastro confirmado no MySQL também tem id=1.
+
+IMPORTANTE SOBRE SEGURANÇA:
+A política SELECT atual da tabela medicoes permite leitura pelo papel anon.
+A Publishable key não é uma chave secreta, mas essa política aberta permite que terceiros consultem registros.
+Ela serve para o teste inicial. Antes de disponibilizar o site publicamente, restrinja as políticas RLS e mova a leitura para uma API no servidor que valide a sessão do usuário. Nunca publique a Secret key.
+
+OBSERVAÇÃO:
+Os dados de consumo e potência são os valores calculados e enviados pelo ESP32. A precisão depende da calibração dos sensores e da configuração de tensão/fator de potência.

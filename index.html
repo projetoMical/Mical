@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MICAL — Monitoramento Inteligente de Consumo de Água e Luz.">
+  <title>MICAL | Monitoramento Inteligente</title>
+  <link rel="icon" type="image/jpeg" href="img/Logo.png">
+  <link rel="stylesheet" href="/style.css?v=2">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#inicio"><img src="img/Logo.png" alt="" class="logo"><span>MICAL</span></a>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+    <nav class="nav-links"><a href="index.html"><i data-lucide="house"></i> Início</a><a href="monitoramento.html"><i data-lucide="activity"></i> Monitoramento</a><a href="calculo-conta.html"><i data-lucide="calculator"></i> Calcular conta</a><a href="dicas-economia.html"><i data-lucide="lightbulb"></i> Dicas de economia</a></nav>
+    <div class="header-actions">
+      <div class="auth-area" id="authArea">
+        <a class="btn btn-secondary" href="cadastro.html">Cadastro</a>
+        <a class="btn btn-primary" href="login.html">Login</a>
+      </div>
+      <button class="theme-toggle" data-theme-toggle aria-label="Alternar tema"><i data-lucide="moon"></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow"><i data-lucide="activity"></i> Monitoramento inteligente</span>
+        <h1>Controle seu consumo de <span class="word-energy">Energia</span> <span class="word-and">e</span> <span class="word-water">Água</span>.</h1>
+        <p>O MICAL ajuda você a acompanhar o consumo residencial, visualizar informações e identificar oportunidades para evitar desperdícios.</p>
+        <div class="actions">
+          <a href="login.html" class="btn btn-primary" id="startNow">Começar agora <i data-lucide="arrow-right"></i></a>
+          <a href="#sobre" class="btn btn-secondary">Sobre o projeto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-yellow" id="funcionalidades">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Recursos</span><h2>O que o MICAL oferece?</h2><p>Ferramentas para facilitar o acompanhamento do consumo da sua residência.</p></div>
+      <div class="cards three">
+        <article class="card"><div class="icon water-icon"><i data-lucide="chart-no-axes-combined"></i></div><h3>Análise de consumo</h3><p>Acompanhe informações organizadas e gráficos construídos a partir das medições recebidas.</p></article>
+        <article class="card"><div class="icon energy-icon"><i data-lucide="lightbulb"></i></div><h3>Dicas de economia</h3><p>Confira recomendações para incentivar o uso consciente da água e da energia.</p></article>
+        <article class="card"><div class="icon neutral-icon"><i data-lucide="bell-ring"></i></div><h3>Alertas</h3><p>Identifique possíveis alterações e situações anormais no padrão de consumo.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-blue" id="sobre">
+    <div class="container about-grid">
+      <div>
+        <span class="eyebrow">Quem somos</span>
+        <h2>Conheça as desenvolvedoras</h2>
+        <p class="justified">Somos uma equipe de estudantes do curso técnico de Desenvolvimento de Sistemas da Etec Dr. Celso Giglio, composta por Ana Clara Rocha de Oliveira, Bruna Oliveira Delmondes, Evelyn Ferreira Morais, Maria Fernanda Lima Sena e Yonara Arruda de Alencar. Buscamos desenvolver uma solução para ajudar os moradores a acompanhar o consumo de água e energia elétrica de maneira simplificada e acessível.</p>
+        <h3 class="subheading">Sobre o MICAL</h3>
+        <p class="justified">O MICAL foi desenvolvido com o objetivo de auxiliar os moradores no acompanhamento do consumo residencial de água e energia elétrica. Por meio dos dados coletados pelos sensores, a proposta é apresentar informações que ajudem o usuário a compreender seus hábitos e identificar possíveis situações de desperdício.</p>
+      </div>
+      <div class="about-panel">
+        <div class="about-feature"><i data-lucide="gauge"></i><div><h3>Monitoramento inteligente</h3><p>Coleta de informações por sensores conectados a dispositivos ESP32.</p></div></div>
+        <div class="about-feature"><i data-lucide="droplet"></i><div><h3>Consumo de água</h3><p>Acompanhamento do volume de água utilizado na residência.</p></div></div>
+        <div class="about-feature"><i data-lucide="zap"></i><div><h3>Consumo de energia</h3><p>Acompanhamento do consumo de energia elétrica.</p></div></div>
+      </div>
+    </div>
+    <div class="container objective-grid">
+      <article class="mini-card"><i data-lucide="scan-eye"></i><h3>Acompanhar o consumo</h3><p>Visualizar dados de água e energia da residência.</p></article>
+      <article class="mini-card"><i data-lucide="wallet"></i><h3>Reduzir custos</h3><p>Identificar hábitos que podem contribuir para gastos maiores.</p></article>
+      <article class="mini-card"><i data-lucide="leaf"></i><h3>Evitar desperdícios</h3><p>Incentivar atitudes mais conscientes no uso dos recursos.</p></article>
+    </div>
+  </section>
+
+  <section class="section section-yellow" id="produtos">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">Soluções MICAL</span><h2>Produtos e serviços</h2><p>Recursos previstos para o monitoramento inteligente de água e energia.</p></div>
+      <div class="cards three">
+        <article class="card product-card"><div class="icon water-icon"><i data-lucide="droplet"></i></div><h3>Monitoramento de água</h3><p>Acompanhamento do consumo, histórico de dados, identificação de alterações e alertas.</p><span class="tag">Sensor YF-S201</span></article>
+        <article class="card product-card"><div class="icon energy-icon"><i data-lucide="zap"></i></div><h3>Monitoramento de energia</h3><p>Acompanhamento do consumo elétrico, histórico de dados e análise de utilização.</p><span class="tag">Sensor SCT-013</span></article>
+        <article class="card product-card"><div class="icon neutral-icon"><i data-lucide="sprout"></i></div><h3>Dicas de consumo</h3><p>Recomendações para economizar água e energia e adotar boas práticas.</p></article>
+        <article class="card product-card"><div class="icon neutral-icon"><i data-lucide="layout-dashboard"></i></div><h3>Painel inteligente</h3><p>Visualização de gráficos, comparação de períodos e histórico de informações.</p></article>
+        <article class="card product-card"><div class="icon neutral-icon"><i data-lucide="bell-ring"></i></div><h3>Sistema de alertas</h3><p>Informações sobre consumo elevado e alterações.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-blue" id="duvidas">
+    <div class="container faq-wrap">
+      <div class="section-head"><span class="eyebrow">Central de ajuda</span><h2>Dúvidas frequentes</h2><p>Entenda a proposta e o funcionamento do MICAL.</p></div>
+      <div class="faq-list">
+        <details><summary>O que é o MICAL?</summary><p>É uma proposta de sistema de Monitoramento Inteligente de Consumo de Água e Luz, que auxilia moradores a acompanhar o consumo residencial.</p></details>
+        <details><summary>Qual é o objetivo do MICAL?</summary><p>Fornecer informações para ajudar o usuário a compreender seus hábitos, identificar possíveis desperdícios e buscar uma utilização mais consciente dos recursos.</p></details>
+        <details><summary>Como os dados são obtidos?</summary><p>O projeto utiliza sensores conectados a um ESP32 para coletar informações de consumo. Os dados deverão ser enviados a uma API para processamento e armazenamento.</p></details>
+        <details><summary>O MICAL envia alertas?</summary><p>Estão previstos alertas relacionados a situações como consumo anormal.</p></details>
+        <details><summary>Posso visualizar gráficos de consumo?</summary><p>Sim. A proposta apresenta os dados por meio de gráficos e informações organizadas, permitindo acompanhar a evolução do consumo.</p></details>
+        <details><summary>O sistema mostra quanto vou pagar?</summary><p>O projeto prevê estimativas de despesas. Os valores devem ser entendidos como estimativas, não como substituição da conta oficial.</p></details>
+        <details><summary>O MICAL fornece dicas de economia?</summary><p>Sim. Uma das propostas é apresentar dicas para incentivar o uso consciente da água e da energia elétrica.</p></details>
+        <details><summary>O MICAL funciona em celular?</summary><p>O site é responsivo e deve se adaptar a diferentes tamanhos de tela, incluindo celulares e tablets.</p></details>
+        <details><summary>Preciso instalar algum programa?</summary><p>O acesso às funcionalidades web ocorre pelo navegador. Os recursos que dependem dos sensores necessitam da integração com os dispositivos e com a infraestrutura do projeto.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div><h3>MICAL</h3><p>Monitoramento Inteligente de Consumo de Água e Luz.</p></div>
+    <div><h3>Navegação</h3><a href="index.html">Início</a><a href="monitoramento.html">Monitoramento</a><a href="calculo-conta.html">Calcular conta</a><a href="dicas-economia.html">Dicas de economia</a></div>
+    <div><h3>Projeto</h3><p>Site desenvolvido para apresentação do projeto MICAL.</p></div>
+    <div><h3>Contato</h3><p>prjmical@gmail.com</p></div>
+  </div>
+  <div class="container footer-bottom">© 2026 MICAL — Projeto acadêmico.</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
